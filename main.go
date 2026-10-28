@@ -1,42 +1,9 @@
-/*
-package main
-
-import (
-	"fmt"
-)
-
-var (
-	nameIgor string = "Игорь"
-	ageIgor  int    = 28
-)
-
-const country = "Россия"
-
-func main() {
-	var slovo string
-	obIgore := fmt.Sprintf("Всем приветик, меня зовут %s, и мне %d лет. Моя страна %s.",
-		nameIgor, ageIgor, country)
-	fmt.Println(obIgore)
-	fmt.Println("Какое будет слово дня от:", nameIgor)
-	fmt.Scan(&slovo) //или Scanln(&slovo, &drugoe slovo)
-	fmt.Printf("Слово дня такое: %s\n", slovo)
-}
-*/
-
 // \n -перенос строки
 // \t -табуляцию делает
 // \" - поставить кавычки на слов
 // %f -флоат
 // %t - булевое
 // %d%% - будет процент
-
-//str := fmt.Sprint("Меня зовут ", name, ", мне ", age, "лет.")
-//или
-//str := fmt.Sprintf("Меня зовут %s, мне %d, лет.", name, age)
-
-//str := "      Привет!!!   "
-//fmt.Println(strings.TrimSpace(str)) - убирает пробелы
-//fmt.Println(strings.EqualFold(str, "ПРиВЕт!!!"))сравнивает строки не смотря на регистр
 
 //func main() {
 //	var input int
@@ -77,13 +44,6 @@ func main() {
 /// мы пишем ааппаап апапап апапап
 ///выдаст ааппаап апапап апапап
 
-//a := 10
-//if a > 5 {
-//	fmt.Println("а больше 5")
-//} else {
-//	fmt.Println("а не больше 5")
-//}
-
 //switch day {
 //case 1:
 //	fmt.Println("Понедельник")
@@ -115,40 +75,6 @@ func main() {
 //default:
 //	fmt.Println("нет такой недели")
 //
-
-// создать переменную чтоб сканом писать туда данные а после в функцию вставить эту переменную и чтоб она обращалась к этой переменной
-//package main
-
-//import (
-//	"fmt"
-//	"unicode/utf8"
-//)
-
-//func main() {
-//	fmt.Println("Привет из меин")
-//	name := "Игорь"
-//	sayHello(name, "модератор")
-//}
-
-//func sayHello(username string, role string) {
-//	fmt.Printf("Привет %s, вы %s.\n", username, role)
-//}
-
-//func main() {
-//	result := sum(2, 5)
-//	fmt.Println(result)
-//}
-
-//func sum(n1, n2 int) int {
-//	return n1 + n2
-//}
-
-//func main() {
-//	helloStr := "Привет, друг!"
-//	bytesLength, runeLength := getFullLength(helloStr)
-//	fmt.Println("Строка %q занимает %d байт и имеет %d символов.\n", helloStr, bytesLength, runeLength)
-
-//}
 
 //func getFullLength(str string) (int, int) {
 //	bytes := len(str)
@@ -203,43 +129,6 @@ func main() {
 //func divide(n1, n2 int) {
 //	defer fmt.Println("Конеч функкции divide")   //defer означает что все равно выполнится при любом условии
 //	fmt.Println(n1 / n2)
-//}
-
-//package main
-
-//import (
-//	"fmt"
-//	"log"
-//)
-
-//func main() {
-//	ruFn, err := helloFactory("ru")
-//	if err != nil {
-//		log.Fatalf("helloFactory error: %s", err)
-//	}
-//	ruFn("Павел")
-
-//	enFn, err := helloFactory("en")
-//	if err != nil {
-//		log.Fatalf("hellofactory error: %s", err.Error())
-//	}
-//	enFn("john")
-//}
-
-//func helloFactory(lang string) (func(name string), error) {
-//	var message string
-//	switch lang {
-//	case "en":
-//		message = "Hello, $s!\n"
-//	case "ru":
-//		message = "Привет, %s!\n"
-//	default:
-//		return nil, fmt.Errorf("lang %s not supported", lang)
-//	}
-
-//	return func(name string) {
-//		fmt.Printf(message, name)
-//	}, nil
 //}
 
 //Система оценок
