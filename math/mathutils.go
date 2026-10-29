@@ -1,4 +1,4 @@
-package mathutils
+package math
 
 const PI = 3.14
 
