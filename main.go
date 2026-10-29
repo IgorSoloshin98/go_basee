@@ -149,84 +149,85 @@
 //60–69: D
 //Ниже 60: F
 
+//package main
+
+//import (
+//	"errors"
+//	"fmt"
+//	"math/rand/v2"
+//)
+
+//func main() {
+//	score, err := getScore()
+//	if err != nil {
+//		fmt.Println(err)
+//		return
+//	}
+
+//	letterGrade := getLetterGrade(score)
+//	fmt.Printf("Ваша буквенная оценка: %s\n", letterGrade)
+//}
+
+//func getLetterGrade(score int) string {
+//	switch {
+//	case score >= 90:
+//		return "A"
+//	case score >= 80:
+//		return "B"
+//	case score >= 70:
+//		return "C"
+//	case score >= 60:
+//		return "D"
+//	default:
+//		return "F"
+//	}
+//}
+
+//func getScore() (int, error) {
+//	var score int
+//	fmt.Printf("Введите оценку (0-100): ")
+//	if _, err := fmt.Scan(&score); err != nil {
+//		return 0, fmt.Errorf("Ошибка ввода: %w", err)
+//	}
+
+//	if score < 0 || score > 100 {
+//		return 0, errors.New("Оценка должна быть в диапазоне от 0 и до 100 вкл")
+//	}
+
+//	return score, nil
+//}
+
+//func main() {
+//	fmt.Println(Attack())
+
+//	attackWithDamageBoost := DamageBoostDecorator(Attack)
+//	attackWithCriticalHit := CriticalHitDecoration(attackWithDamageBoost)
+//	attackWithSlowEffect := SlowEffectDecorator(attackWithCriticalHit)
+//	fmt.Println(attackWithSlowEffect())
+//}
+
+//func Attack() string {
+//	return "Атака выполнена!"
+//}
+
+//func DamageBoostDecorator(attackFunc func() string) func() string {
+//	return func() string {
+//		return "Вам улыбнулась удача, нанесение урона увеличено на 10%! " + attackFunc()
+//	}
+//}
+
+//func CriticalHitDecoration(attackFunc func() string) func() string {
+//	return func() string {
+//		if rand.Float64() < 0.25 {
+//			return "Критический адар! Урон удвоен! " + attackFunc()
+//		}
+//		return attackFunc()
+//	}
+//}
+
+//func SlowEffectDecorator(attackFunc func() string) func() string {
+//	return func() string {
+//		return attackFunc() + " Цель замедлена на 2 хода!"
+//	}
+
 package main
-
-import (
-	"errors"
-	"fmt"
-	"math/rand/v2"
-)
-
-func main() {
-	score, err := getScore()
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	letterGrade := getLetterGrade(score)
-	fmt.Printf("Ваша буквенная оценка: %s\n", letterGrade)
-}
-
-func getLetterGrade(score int) string {
-	switch {
-	case score >= 90:
-		return "A"
-	case score >= 80:
-		return "B"
-	case score >= 70:
-		return "C"
-	case score >= 60:
-		return "D"
-	default:
-		return "F"
-	}
-}
-
-func getScore() (int, error) {
-	var score int
-	fmt.Printf("Введите оценку (0-100): ")
-	if _, err := fmt.Scan(&score); err != nil {
-		return 0, fmt.Errorf("Ошибка ввода: %w", err)
-	}
-
-	if score < 0 || score > 100 {
-		return 0, errors.New("Оценка должна быть в диапазоне от 0 и до 100 вкл")
-	}
-
-	return score, nil
-}
-
-func main() {
-	fmt.Println(Attack())
-
-	attackWithDamageBoost := DamageBoostDecorator(Attack)
-	attackWithCriticalHit := CriticalHitDecoration(attackWithDamageBoost)
-	attackWithSlowEffect := SlowEffectDecorator(attackWithCriticalHit)
-	fmt.Println(attackWithSlowEffect())
-}
-
-func Attack() string {
-	return "Атака выполнена!"
-}
-
-func DamageBoostDecorator(attackFunc func() string) func() string {
-	return func() string {
-		return "Вам улыбнулась удача, нанесение урона увеличено на 10%! " + attackFunc()
-	}
-}
-
-func CriticalHitDecoration(attackFunc func() string) func() string {
-	return func() string {
-		if rand.Float64() < 0.25 {
-			return "Критический адар! Урон удвоен! " + attackFunc()
-		}
-		return attackFunc()
-	}
-}
-
-func SlowEffectDecorator(attackFunc func() string) func() string {
-	return func() string {
-		return attackFunc() + " Цель замедлена на 2 хода!"
-	}
-}
