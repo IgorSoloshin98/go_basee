@@ -231,3 +231,18 @@
 //	}
 
 package main
+
+import "fmt"
+
+func main() {
+	i := 1
+	for i < 11 {
+		fmt.Println("Привет", i)
+		i++
+	}
+	fmt.Println(i)
+
+	for i := range 10 {
+		fmt.Println(i + 1)
+	}
+}
