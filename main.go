@@ -230,19 +230,72 @@
 //		return attackFunc() + " Цель замедлена на 2 хода!"
 //	}
 
+//package main
+
+//import "fmt"
+
+//func main() {
+//	i := 1
+//	for i < 11 {
+//		fmt.Println("Привет", i)
+//		i++
+//	}
+//	fmt.Println(i)
+
+//	for i := range 10 {
+//		fmt.Println(i + 1)
+//	}
+///	str := "Ку-Ку!"
+//	for _, r := range str {
+//		fmt.Println(string(r))
+//	}
+//}
+
+//Игра угадай число
+
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand/v2"
+	"strings"
+)
+
+func generateRandomNumber(min, max int) int {
+	return rand.IntN(max-min+1) + min
+}
+
+func getUserInput(min, max int) (int, error) {
+	var input string
+	fmt.Printf("Ваше предположение (либо для завершения, введите слово выход):")
+	fmt.Scanln(&input)
+
+	if strings.ToLower(input) == "выход" {
+		0,
+	}
+}
+
+func playGame() {
+	min := 1
+	max := 100
+	randomNumber := generateRandomNumber(min, max)
+	fmt.Println("Компьютер загадал случайное число от 1 до 100 включительно. Угадайте его!")
+
+	for {
+		input := getUserInput(min, max)
+	}
+}
 
 func main() {
-	i := 1
-	for i < 11 {
-		fmt.Println("Привет", i)
-		i++
-	}
-	fmt.Println(i)
+	for {
+		playGame()
 
-	for i := range 10 {
-		fmt.Println(i + 1)
+		var playAgain string
+		fmt.Printf("Хотите сыграть еще раз в игру? (если хотите, напишите слово да): ")
+		fmt.Scanln(&playAgain)
+		if playAgain != "да" {
+			fmt.Println("Спасибо за игру! До свидания!")
+			break
+		}
 	}
 }
