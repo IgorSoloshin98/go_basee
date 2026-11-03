@@ -308,3 +308,19 @@ func DisplayResults(letters, digits, spaces, punctuation int) {
 	fmt.Printf("Количество пробелов: %d\n", spaces)
 	fmt.Printf("Количество знаков препинания: %d\n", punctuation)
 }
+
+//массивы
+//var nums [5]int
+//fmt.Println(nums)
+//                  0  1  2  3  4
+//var nums = [5]int{2, 4, 6, 8, 0}
+//fmt.Println(nums[1])     //4
+//nums[1] = 400 //2 400 6 8 0
+//fmt.Println(len(nums)) //5
+//fruits := [...]string{"apple","banan", "cherry"}
+//
+//nums := [10]int{1: 10, 4: 20}
+//
+//
+//
+//
