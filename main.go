@@ -252,75 +252,88 @@
 //			fmt.Println(string(r))
 //		}
 //	}
+//package main
+
+//import (
+//	"bufio"
+//	"errors"
+//	"fmt"
+//	"os"
+//	"unicode"
+//)
+
+//func main() {
+//	input, err := GetInput()
+//	if err != nil {
+//		fmt.Printf("Ошибка при получении текста: %v\n", err)
+//		os.Exit(1)
+//	}
+
+//	letters, gigits, spaces, punctuation := CountCharacters(input)
+//	DisplayResults(letters, gigits, spaces, punctuation)
+//}
+
+//func GetInput() (string, error) {
+//	scanner := bufio.NewScanner(os.Stdin)
+//	fmt.Print("Введите текст: ")
+//	if !scanner.Scan() {
+//		fmt.Println()
+//		if err := scanner.Err(); err != nil {
+//			return "", fmt.Errorf("scan error: %w", err)
+//		}
+//		return "", errors.New("unable to read input")
+//	}
+//	return scanner.Text(), nil
+//}
+
+//func CountCharacters(text string) (letters, digits, spaces, punctuation int) {
+//	for _, char := range text {
+//		switch {
+//		case unicode.IsLetter(char):
+//			letters++
+//		case unicode.IsDigit(char):
+//			digits++
+//		case unicode.IsSpace(char):
+//			spaces++
+//		case unicode.IsPunct(char):
+//			punctuation++
+//		}
+//	}
+//	return
+//}
+
+//func DisplayResults(letters, digits, spaces, punctuation int) {
+//	fmt.Printf("Количество букв: %d\n", letters)
+//	fmt.Printf("Количество цифр: %d\n", digits)
+//	fmt.Printf("Количество пробелов: %d\n", spaces)
+//	fmt.Printf("Количество знаков препинания: %d\n", punctuation)
+//}
+
+// массивы
+// var nums [5]int
+// fmt.Println(nums)
+//
+//	0  1  2  3  4
+//
+// var nums = [5]int{2, 4, 6, 8, 0}
+// fmt.Println(nums[1])     //4
+// nums[1] = 400 //2 400 6 8 0
+// fmt.Println(len(nums)) //5
+// fruits := [...]string{"apple","banan", "cherry"}
+//
+// nums := [10]int{1: 10, 4: 20}
 package main
 
-import (
-	"bufio"
-	"errors"
-	"fmt"
-	"os"
-	"unicode"
-)
+import "fmt"
 
 func main() {
-	input, err := GetInput()
-	if err != nil {
-		fmt.Printf("Ошибка при получении текста: %v\n", err)
-		os.Exit(1)
+
+	nums := [5]int{5, 23, -9, 1, 6}
+
+	//	for i := 0; i < len(nums); i++ {
+	//		fmt.Println(i, nums[i])
+	//	}
+	for _, value := range nums {
+		fmt.Println(value)
 	}
-
-	letters, gigits, spaces, punctuation := CountCharacters(input)
-	DisplayResults(letters, gigits, spaces, punctuation)
 }
-
-func GetInput() (string, error) {
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Print("Введите текст: ")
-	if !scanner.Scan() {
-		fmt.Println()
-		if err := scanner.Err(); err != nil {
-			return "", fmt.Errorf("scan error: %w", err)
-		}
-		return "", errors.New("unable to read input")
-	}
-	return scanner.Text(), nil
-}
-
-func CountCharacters(text string) (letters, digits, spaces, punctuation int) {
-	for _, char := range text {
-		switch {
-		case unicode.IsLetter(char):
-			letters++
-		case unicode.IsDigit(char):
-			digits++
-		case unicode.IsSpace(char):
-			spaces++
-		case unicode.IsPunct(char):
-			punctuation++
-		}
-	}
-	return
-}
-
-func DisplayResults(letters, digits, spaces, punctuation int) {
-	fmt.Printf("Количество букв: %d\n", letters)
-	fmt.Printf("Количество цифр: %d\n", digits)
-	fmt.Printf("Количество пробелов: %d\n", spaces)
-	fmt.Printf("Количество знаков препинания: %d\n", punctuation)
-}
-
-//массивы
-//var nums [5]int
-//fmt.Println(nums)
-//                  0  1  2  3  4
-//var nums = [5]int{2, 4, 6, 8, 0}
-//fmt.Println(nums[1])     //4
-//nums[1] = 400 //2 400 6 8 0
-//fmt.Println(len(nums)) //5
-//fruits := [...]string{"apple","banan", "cherry"}
-//
-//nums := [10]int{1: 10, 4: 20}
-//
-//
-//
-//
