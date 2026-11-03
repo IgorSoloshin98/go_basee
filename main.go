@@ -245,57 +245,66 @@
 //	for i := range 10 {
 //		fmt.Println(i + 1)
 //	}
-///	str := "Ку-Ку!"
-//	for _, r := range str {
-//		fmt.Println(string(r))
+//
+// /	str := "Ку-Ку!"
+//
+//		for _, r := range str {
+//			fmt.Println(string(r))
+//		}
 //	}
-//}
-
-//Игра угадай число
-
 package main
 
 import (
+	"bufio"
+	"errors"
 	"fmt"
-	"math/rand/v2"
-	"strings"
+	"os"
+	"unicode"
 )
 
-func generateRandomNumber(min, max int) int {
-	return rand.IntN(max-min+1) + min
-}
-
-func getUserInput(min, max int) (int, error) {
-	var input string
-	fmt.Printf("Ваше предположение (либо для завершения, введите слово выход):")
-	fmt.Scanln(&input)
-
-	if strings.ToLower(input) == "выход" {
-		0,
-	}
-}
-
-func playGame() {
-	min := 1
-	max := 100
-	randomNumber := generateRandomNumber(min, max)
-	fmt.Println("Компьютер загадал случайное число от 1 до 100 включительно. Угадайте его!")
-
-	for {
-		input := getUserInput(min, max)
-	}
-}
-
 func main() {
-	for {
-		playGame()
+	input, err := GetInput()
+	if err != nil {
+		fmt.Printf("Ошибка при получении текста: %v\n", err)
+		os.Exit(1)
+	}
 
-		var playAgain string
-		fmt.Printf("Хотите сыграть еще раз в игру? (если хотите, напишите слово да): ")
-		fmt.Scanln(&playAgain)
-		if playAgain != "да" {
-			fmt.Println("Спасибо за игру! До свидания!")
-			break
+	letters, gigits, spaces, punctuation := CountCharacters(input)
+	DisplayResults(letters, gigits, spaces, punctuation)
+}
+
+func GetInput() (string, error) {
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Print("Введите текст: ")
+	if !scanner.Scan() {
+		fmt.Println()
+		if err := scanner.Err(); err != nil {
+			return "", fmt.Errorf("scan error: %w", err)
+		}
+		return "", errors.New("unable to read input")
+	}
+	return scanner.Text(), nil
+}
+
+func CountCharacters(text string) (letters, digits, spaces, punctuation int) {
+	for _, char := range text {
+		switch {
+		case unicode.IsLetter(char):
+			letters++
+		case unicode.IsDigit(char):
+			digits++
+		case unicode.IsSpace(char):
+			spaces++
+		case unicode.IsPunct(char):
+			punctuation++
 		}
 	}
+	return
+}
+
+func DisplayResults(letters, digits, spaces, punctuation int) {
+	fmt.Printf("Количество букв: %d\n", letters)
+	fmt.Printf("Количество цифр: %d\n", digits)
+	fmt.Printf("Количество пробелов: %d\n", spaces)
+	fmt.Printf("Количество знаков препинания: %d\n", punctuation)
 }
