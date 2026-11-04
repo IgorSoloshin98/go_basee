@@ -1,10 +1,3 @@
-// \n -перенос строки
-// \t -табуляцию делает
-// \" - поставить кавычки на слов
-// %f -флоат
-// %t - булевое
-// %d%% - будет процент
-
 //func main() {
 //	var input int
 //	fmt.Println("Введите время в часах (0-23): ")
@@ -27,7 +20,7 @@
 //	fmt.Printf("Сейчас %02dч. - %s\n", input, timeOfDay)
 //}
 
-//ввод от пользователя
+//ВВОД ОТ ПОЛЬЗОВАТЕЛЯ!!!!
 //package main
 //import (
 //	"bufio"
@@ -76,16 +69,6 @@
 //	fmt.Println("нет такой недели")
 //
 
-//func getFullLength(str string) (int, int) {
-//	bytes := len(str)
-//	runes := utf8.RuneCountInString(str)
-//	return bytes, runes
-//}
-//или
-//func getFullLength(str string) (int, int) {
-//	return len(str), utf8.RuneCountInString(str)
-//}
-
 //функции для написания пароля и проверки
 //package main
 
@@ -129,72 +112,6 @@
 //func divide(n1, n2 int) {
 //	defer fmt.Println("Конеч функкции divide")   //defer означает что все равно выполнится при любом условии
 //	fmt.Println(n1 / n2)
-//}
-
-//Система оценок
-//Нашему проекту приходится работать с разными учебными заведениями и не всегда система
-//оценок похожа. Необходимо создать программу, которая запрашивает у пользователя оценку в
-//диапазоне от 0 до 100 включительно и выводит соответствующую буквенную оценку (A, B, C, D, F).
-//Детали
-//Необходимо создать функцию, которая будет запрашивать у пользователя ввод числовой
-//оценки (целое число) в диапазоне от 0 до 100. Необходимо убедиться, что введенное значение
-//находится в указанном диапазоне. Если значение вне диапазона или введено некорректно, программа
-//должна возвращать ошибку из функции, а при ее обработке выводить сообщение об ошибке и
-//завершать выполнение.
-//В зависимости от введенной оценки, программа должна присвоить ей соответствующую
-//буквенную оценку по следующей шкале:
-//90–100: A
-//80–89: B
-//70–79: C
-//60–69: D
-//Ниже 60: F
-
-//package main
-
-//import (
-//	"errors"
-//	"fmt"
-//	"math/rand/v2"
-//)
-
-//func main() {
-//	score, err := getScore()
-//	if err != nil {
-//		fmt.Println(err)
-//		return
-//	}
-
-//	letterGrade := getLetterGrade(score)
-//	fmt.Printf("Ваша буквенная оценка: %s\n", letterGrade)
-//}
-
-//func getLetterGrade(score int) string {
-//	switch {
-//	case score >= 90:
-//		return "A"
-//	case score >= 80:
-//		return "B"
-//	case score >= 70:
-//		return "C"
-//	case score >= 60:
-//		return "D"
-//	default:
-//		return "F"
-//	}
-//}
-
-//func getScore() (int, error) {
-//	var score int
-//	fmt.Printf("Введите оценку (0-100): ")
-//	if _, err := fmt.Scan(&score); err != nil {
-//		return 0, fmt.Errorf("Ошибка ввода: %w", err)
-//	}
-
-//	if score < 0 || score > 100 {
-//		return 0, errors.New("Оценка должна быть в диапазоне от 0 и до 100 вкл")
-//	}
-
-//	return score, nil
 //}
 
 //func main() {
@@ -322,18 +239,62 @@
 // fruits := [...]string{"apple","banan", "cherry"}
 //
 // nums := [10]int{1: 10, 4: 20}
-package main
+//package main
 
-import "fmt"
+//import "fmt"
 
-func main() {
+//func main() {
 
-	nums := [5]int{5, 23, -9, 1, 6}
+//	nums := [5]int{5, 23, -9, 1, 6}
 
-	//	for i := 0; i < len(nums); i++ {
-	//		fmt.Println(i, nums[i])
-	//	}
-	for _, value := range nums {
-		fmt.Println(value)
-	}
-}
+//		for i := 0; i < len(nums); i++ {
+//			fmt.Println(i, nums[i])
+//		}
+//		for _, value := range nums {
+//			fmt.Println(value)
+//		}
+//	}
+//package main
+
+//import "fmt"
+
+//func main() {
+//	nums := [5]int{1, 2, 3, 4, 5}
+//	modifyArray(&nums)
+//	fmt.Println(nums)
+//}
+
+//	func modifyArray(arr *[5]int) {
+//		arr[2] = 100
+//		fmt.Println(arr)
+//	}
+//
+// Секретный код практика
+//package main
+
+//import "fmt"
+
+//func main() {
+//	arr := [5]int{3, 8, 1, 8, 1}
+//	fmt.Println("Секретный код:", generateSecretCode(arr))
+//}
+
+//func generateSecretCode(arr [5]int) string {
+//	min, max := arr[0], arr[0]
+//	middlePart := ""
+//	for _, num := range arr {
+//		if num < min {
+//			min = num
+//		}
+//		if num > max {
+//			max = num
+//		}
+//		if num%2 == 0 {
+//			middlePart += fmt.Sprintf("Е%d", num)
+//		} else {
+//			middlePart += fmt.Sprintf("О%d", num)
+//		}
+
+//	}
+//	return fmt.Sprintf("%d%s%d", min, middlePart, max)
+//}
