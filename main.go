@@ -295,6 +295,41 @@
 //			middlePart += fmt.Sprintf("О%d", num)
 //		}
 
+//		}
+//		return fmt.Sprintf("%d%s%d", min, middlePart, max)
 //	}
-//	return fmt.Sprintf("%d%s%d", min, middlePart, max)
+//
+// СЛАЙСЫ!!!
+//package main
+
+//import "fmt"
+
+//func main() {
+//slice := []int{6, 4, 5, 3, 7, 5}
+//fmt.Println(slice == nil)
+
+//	slice := make([]int, 5, 10)
+//	fmt.Printf("slice: %v, len: %d, cap: %d\n", slice, len(slice), cap(slice))
+
+//	slice := []int{5, 10}
+//	fmt.Println(slice[1])
+//}
+
+//package main
+
+//import "fmt"
+
+//func main() {
+//	numbers := []int{6, 4, 5, 9, 7}
+
+//	for i := 0; i < len(numbers); i++ {
+//		sum += numbers[i]
+//	}
+//for _, v := range numbers {
+//	sum += v
+//	for i := range numbers {
+//		numbers[i] *= 10
+
+//	}
+//	fmt.Println("Сумма элементов слайса:", numbers)
 //}
